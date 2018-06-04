@@ -51,7 +51,9 @@ window.renderStatistics = function (ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
     ctx.fillStyle = 'rgba(0, 0, 128, 1)';
     ctx.fillText(names[i], CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, NAMES_Y);
-    ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    for (var j=0;j<6;j++){
+      ctx.fillStyle = 'rgba(0, 0, 128, ' + (Math.ceil(Math.random()) * i * 0.1);
+    }
     ctx.fillRect(CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, BARS_Y + (150 - BARS_HEIGHT * times[i] / maxTime), BAR_WIDTH, BARS_HEIGHT * times[i] / maxTime);
     ctx.fillStyle = 'rgba(0, 0, 128, 1)';
     ctx.fillText(times[i], CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, BARS_Y + (130 - BARS_HEIGHT * times[i] / maxTime));
