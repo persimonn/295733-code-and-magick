@@ -15,7 +15,7 @@ var TEXT_LINE_HEIGHT = 20;
 var BAR_WIDTH = 40;
 var BARS_HEIGHT = 150;
 var BAR_GAP = 50;
-var BARS_Y = 75;
+var BARS_Y = 90;
 var NAMES_Y = 250;
 
 var renderCloud = function (ctx, x, y, color) {
@@ -53,5 +53,7 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillText(names[i], CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, NAMES_Y);
     ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     ctx.fillRect(CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, BARS_Y + (150 - BARS_HEIGHT * times[i] / maxTime), BAR_WIDTH, BARS_HEIGHT * times[i] / maxTime);
+    ctx.fillStyle = 'rgba(0, 0, 128, 1)';
+    ctx.fillText(times[i], CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, BARS_Y + (130 - BARS_HEIGHT * times[i] / maxTime));
   }
 };
