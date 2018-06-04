@@ -53,5 +53,5 @@ window.renderStatistics = function (ctx, names, times) {
     ctx.fillText(names[i], CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, NAMES_Y);
     ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     ctx.fillRect(CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, BARS_Y + (150 - BARS_HEIGHT * times[i] / maxTime), BAR_WIDTH, BARS_HEIGHT * times[i] / maxTime);
-  };
-}
+  }
+};
