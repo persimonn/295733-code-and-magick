@@ -42,6 +42,17 @@ window.renderStatistics = function (ctx, names, times) {
 
   var maxTime = getMaxElement(times);
 
+// тут начинается
+
+  var min = 4;
+  var max = 10;
+  var saturation = function getRandomArbitrary(min, max) {
+    return (Math.random() * (max - min) + min).toFixed(1);
+  };
+
+// тут заканчивается
+
+
   for (var i = 0; i < names.length; i++) {
     var time = Math.round(times[i]);
     ctx.fillStyle = 'rgba(0, 0, 128, 1)';
@@ -49,7 +60,10 @@ window.renderStatistics = function (ctx, names, times) {
     if (names[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     } else {
-      ctx.fillStyle = 'rgba(0, 0, 128, ' + parseFloat(Math.random().toFixed(1));
+
+//тут применяется
+
+      ctx.fillStyle = 'rgba(0, 0, 128, ' + saturation;
     }
     ctx.fillRect(CONTENT_X + (BAR_WIDTH + BAR_GAP) * i, BARS_Y + (BARS_HEIGHT - BARS_HEIGHT * time / maxTime), BAR_WIDTH, BARS_HEIGHT * time / maxTime);
     ctx.fillStyle = 'rgba(0, 0, 128, 1)';
