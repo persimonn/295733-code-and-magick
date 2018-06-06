@@ -2,8 +2,8 @@
 
 // массивы с вводными данными
 var firstNames = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
-var lastNames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг']
-var colorsOfCoats = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)']
+var lastNames = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+var colorsOfCoats = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var colorsOfEyes = ['black', 'red', 'blue', 'yellow', 'green'];
 
 // поиск окно настроек пользователя
@@ -29,20 +29,20 @@ var getRandomValue = function (arr) {
 
 // функция для создания массива с объектами со случайными значениями
 var newWizards = [];
-var createWizardsArray = function (firstNames, lastNames, colorsOfCoats, colorsOfEyes) {
+var createWizardsArray = function () {
   for (var i = 0; i < 4; i++) {
     var newWizard = {};
-    newWizard.name = getRandomValue(firstNames) + ' ' + getRandomValue(lastNames)
+    newWizard.name = getRandomValue(firstNames) + ' ' + getRandomValue(lastNames);
     newWizard.coatColor = getRandomValue(colorsOfCoats);
     newWizard.eyesColor = getRandomValue(colorsOfEyes);
     newWizards.push(newWizard);
   }
   return newWizards;
-}
+};
 
 createWizardsArray(firstNames, lastNames, colorsOfCoats, colorsOfEyes);
 
-/*тест:
+/* тест:
 console.log(newWizards);
 console.log(newWizards[0]);
 console.log(newWizards[1]);
