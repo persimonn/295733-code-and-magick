@@ -34,7 +34,7 @@ var createWizardsArray = function () {
     newWizard.coatColor = getRandomValue(colorsOfCoats);
     newWizard.eyesColor = getRandomValue(colorsOfEyes);
     newWizards.push(newWizard);
-  };
+  }
   return newWizards;
 };
 
@@ -49,7 +49,7 @@ var renderNewWizard = function (newWizard) {
   wizardElement.querySelector('.wizard-eyes').style.fill = newWizard.eyesColor;
 
   return wizardElement;
-}
+};
 
 // заполнение шаблонов
 var fragment = document.createDocumentFragment();
